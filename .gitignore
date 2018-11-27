@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+servlet3.0/WebContent/WEB-INF/
+spring-annotation/src/test/resources/
+spring-annotation/target/generated-sources/
+spring-annotation/target/generated-test-sources/
+springmvc-annotation/src/test/resources/
+!/springmvc-annotation/target/
+!/spring-annotation/target/
