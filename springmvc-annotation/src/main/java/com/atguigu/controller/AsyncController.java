@@ -24,7 +24,6 @@ public class AsyncController {
         return deferredResult;
     }
 
-
     @ResponseBody
     @RequestMapping("/create")
     public String create() {
@@ -68,14 +67,11 @@ public class AsyncController {
     public Callable<String> async01() {
         System.out.println("主线程开始..." + Thread.currentThread() + "==>" + System.currentTimeMillis());
 
-        Callable<String> callable = new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                System.out.println("副线程开始..." + Thread.currentThread() + "==>" + System.currentTimeMillis());
-                Thread.sleep(2000);
-                System.out.println("副线程开始..." + Thread.currentThread() + "==>" + System.currentTimeMillis());
-                return "Callable<String> async01()";
-            }
+        Callable<String> callable = () -> {
+            System.out.println("副线程开始..." + Thread.currentThread() + "==>" + System.currentTimeMillis());
+            Thread.sleep(2000);
+            System.out.println("副线程开始..." + Thread.currentThread() + "==>" + System.currentTimeMillis());
+            return "Callable<String> async01()";
         };
 
         System.out.println("主线程结束..." + Thread.currentThread() + "==>" + System.currentTimeMillis());

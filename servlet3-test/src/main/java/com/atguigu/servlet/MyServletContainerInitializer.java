@@ -43,6 +43,7 @@ public class MyServletContainerInitializer implements ServletContainerInitialize
 		
 		//×¢²áFilter  FilterRegistration
 		FilterRegistration.Dynamic filter = sc.addFilter("userFilter", UserFilter.class);
+
 		//ÅäÖÃFilterµÄÓ³ÉäĞÅÏ¢
 		filter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
 		
